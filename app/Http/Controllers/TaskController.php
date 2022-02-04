@@ -43,7 +43,7 @@ class TaskController extends Controller
         $task->save();
 
         return response()->json([
-            "task" => $task,
+            "task" => Task::find($task->id),
         ]);
     }
 }

@@ -29,7 +29,7 @@ class TagsController extends Controller
     public function addTag(Request $request) {
         
         $validator = Validator::make( $request->all(), [
-            'name' => 'required|unique:tags',
+            'name' => 'required',
         ]);
 
         if($validator->fails()) {
@@ -43,7 +43,7 @@ class TagsController extends Controller
         $tag->save();
 
         return response()->json([
-            "tag" => $tag,
+            "tag" => Tag::find($tag->id),
         ]);
     }
 }
