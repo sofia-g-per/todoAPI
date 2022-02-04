@@ -14,4 +14,13 @@ class TaskController extends Controller
             'tasks' => $tasks
         ]);
     }
+
+    public function showTask($id) {
+        $task = Task::find($id);
+        $task->tags = $task->tags;
+
+        return response()->json([
+            'task' => $task,
+        ]);
+    }
 }

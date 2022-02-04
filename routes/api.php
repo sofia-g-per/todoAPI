@@ -12,3 +12,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/tasks', [TaskController::class, 'showTasks']);
 
 Route::get('/tags', [TagsController::class, 'showTags']);
+
+Route::get('/tag/{id}', [TagsController::class, 'showTag']);
+
+Route::get('/task/{id}', [TaskController::class, 'showTask']);
+
