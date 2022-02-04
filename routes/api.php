@@ -17,3 +17,8 @@ Route::get('/tag/{id}', [TagsController::class, 'showTag']);
 
 Route::get('/task/{id}', [TaskController::class, 'showTask']);
 
+Route::post('/add-task', [TaskController::class, 'addTask']);
+
+Route::post('/add-tag', [TagController::class, 'addTag']);
+
+
